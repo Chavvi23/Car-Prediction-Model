@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import GradientBoostingRegressor
 from pycaret.regression import *
 import pickle
-df=pd.read_csv("C:/Users/neeru/Downloads/car data.csv")
+df=pd.read_csv("car data.csv")
 df['current_year']=2022
 df['years']=df['current_year']-df['Year']
 df.drop('current_year',axis=1,inplace=True)
