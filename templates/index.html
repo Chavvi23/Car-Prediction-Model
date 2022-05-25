@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car-Price-Prediction</title>
+</head>
+<style>
+    body{
+    background: url(static/img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    margin-left:120px;
+    margin-right:120px;
+    color: aliceblue;
+
+}
+h2{
+    margin-bottom: 35px;
+}
+h3{
+    margin:12px;
+}
+input,#seventh,#sixth,#fifth{
+    margin-bottom: 30px;
+    margin-top: 10px;
+
+}
+
+</style>
+<body>
+    <h2>Car Price Prediction</h2>
+    <form action="/submit" method="post">
+        <label>Year</label><br>
+        <input type="number" name="year" id="first">
+        <br>
+        <label>Showroom Price(lakhs)</label><br>
+        <input name="present_price" id="second">
+        <br>
+        <label>Kilometers Driven</label><br>
+        <input name="km_driven" id="third">
+        <br>
+        <label>No. of owners previously had the car</label><br>
+        <input name="owners" id="fourth">
+        <br>
+        <label>Fuel Type</label><br>
+        <select id="fifth" name="fuel">
+            <option value="Diesel">Diesel</option>
+            <option value="Petrol">Petrol</option>
+            <option value="CNG">CNG</option>
+
+        </select>
+        <br>
+        <label>Dealer or Individual</label><br>
+        <select id="sixth" name="person">
+            <option value="Dealer">Dealer</option>
+            <option value="Individual">Individual</option>
+        </select>
+        <br>
+        <label>Transmission</label><br>
+        <select id="seventh" name="trans">
+            <option value="Manual">Manual</option>
+            <option value="Automatic">Automatic</option>
+        </select>
+        <br>
+        <button type="submit" value="Submit">Calculate the Selling Price</button>
+    </form>
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
